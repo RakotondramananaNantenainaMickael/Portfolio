@@ -37,6 +37,7 @@ bash --version
 which ss ping curl lsof
 ```
 ## PROJECT STRUCTURE
+```bash
 NetMonitor/
 ├── README.md                 # This file
 ├── netmonitor.sh             # Main script (interactive menu)
@@ -45,7 +46,7 @@ NetMonitor/
 ├── internet-check.sh         # Check Internet connectivity
 ├── log-connections.sh        # Save network status to a log file
 └── network-log.txt           # Log file (generated automatically)
-
+```
 
 ## INSTALLATION
 ```bash
