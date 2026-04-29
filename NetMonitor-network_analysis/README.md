@@ -152,7 +152,7 @@ My public IP address:
 
 ## LICENSE 
 This project is distributes under the MIT License.
-See the [LICENSE](LICENSE/) file at the root of this repository for more information.
+See the [LICENSE](/LICENSE) file at the root of this repository for more information.
 
 ## AUTHOR
 RAKOTONDRAMANANA Nantenaina Mickaẽl - first year IT students
