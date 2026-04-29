@@ -37,7 +37,8 @@ Education: INSI University – Information Technology
 ### Linux & SysAdmin
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
-| *Coming soon* | - | - |
+| NetMonitor | Bash suite for network monitoring: active connections viewer, port scanner, Internet connectivity test, and connection logger  |  Bash, Linux commands (ss, ping, curl, lsof) |
+| *More coming soon*| - | - |
 
 ---
 
@@ -64,4 +65,4 @@ Email: nantenainamickael@yahoo.com
 Linkedin: www.linkedin.com/in/nantenaina-mickaël-rakotondramanana  
 ---
 
-*Last updated: December 2024*
+*Last updated: April 2025*
