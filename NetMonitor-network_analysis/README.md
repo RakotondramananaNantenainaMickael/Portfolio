@@ -35,7 +35,7 @@ This project was created as part of a self-learning journey in networking and Ba
 ```bash
 bash --version
 which ss ping curl lsof
-
+```
 ## PROJECT STRUCTURE
 NetMonitor/
 ├── README.md                 # This file
@@ -45,7 +45,7 @@ NetMonitor/
 ├── internet-check.sh         # Check Internet connectivity
 ├── log-connections.sh        # Save network status to a log file
 └── network-log.txt           # Log file (generated automatically)
-```
+
 
 ## INSTALLATION
 ```bash
