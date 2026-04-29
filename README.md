@@ -61,7 +61,7 @@ Education: INSI University – Information Technology
 ## Connect With Me
 GitHub: https://github.com/RakotondramananaNantenainaMickael
 Email: nantenainamickael@yahoo.com
-
+Linkedin: www.linkedin.com/in/nantenaina-mickaël-rakotondramanana
 ---
 
 *Last updated: December 2024*
