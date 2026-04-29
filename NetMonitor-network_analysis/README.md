@@ -93,6 +93,7 @@ Saves the current network state to a text file.
 ```
 ### Example Outputs
 #### Active Connections
+```bash
 =========================================
 ACTIVE CONNECTIONS ON THIS MACHINE
 Date: Wed Apr 29 09:40:42 AM EAT 2026
@@ -103,14 +104,18 @@ ESTAB       0         0            192.168.88.72:56160          3.173.21.63:http
 ESTAB       0         0            192.168.88.72:36086          34.107.243.93:https
 
 Total: 2 active connection(s)
+```
 
-#### Port test 
+#### Port test
+```bash 
 Testing port 80 on google.com...
 
 Port 80: OPEN
 google.com is listening on this port
+```
 
 #### Internet Connectivity Test
+```bash
 INTERNET CONNECTIVITY TEST
 ==============================
 Internet: OK (8.8.8.8 responds)
@@ -118,6 +123,7 @@ DNS: OK (google.com resolved)
 
 My public IP address:
 84.25.123.45
+```
 
 ## SKILLS ACQUIRED
 ### Bash Scripting 
