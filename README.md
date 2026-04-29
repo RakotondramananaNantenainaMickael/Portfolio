@@ -4,7 +4,7 @@
 I'm a first-year IT student at INSI University, Madagascar. This portfolio gathers my technical projects in networking, system administration, and development.
 
 Contact: nantenainamickael@yahoo.com  
-Linkedin: www.linkedin.com/in/nantenaina-mickaël-rakotondramanana
+Linkedin: www.linkedin.com/in/nantenaina-mickaël-rakotondramanana  
 Location: Madagascar  
 Education: INSI University – Information Technology
 
@@ -59,9 +59,9 @@ Education: INSI University – Information Technology
 ---
 
 ## Connect With Me
-GitHub: https://github.com/RakotondramananaNantenainaMickael
-Email: nantenainamickael@yahoo.com
-Linkedin: www.linkedin.com/in/nantenaina-mickaël-rakotondramanana
+GitHub: https://github.com/RakotondramananaNantenainaMickael  
+Email: nantenainamickael@yahoo.com  
+Linkedin: www.linkedin.com/in/nantenaina-mickaël-rakotondramanana  
 ---
 
 *Last updated: December 2024*
