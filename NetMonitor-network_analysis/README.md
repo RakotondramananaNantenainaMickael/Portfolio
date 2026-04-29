@@ -1,5 +1,4 @@
 # NetMonitor
-# NetMonitor
 
 **Network analysis suite for Linux | Bash**
 
@@ -46,8 +45,9 @@ NetMonitor/
 ├── internet-check.sh         # Check Internet connectivity
 ├── log-connections.sh        # Save network status to a log file
 └── network-log.txt           # Log file (generated automatically)
+```
 
-##INSTALLATION
+## INSTALLATION
 ```bash
 mkdir NetMonitor && cd NetMonitor
 chmod +x *.sh
@@ -56,43 +56,43 @@ chmod +x *.sh
 
 ## SCRIPTS DOCUMENTATION
 
-###netmonitor.sh
+### netmonitor.sh
 Main script that displays an interactive menu and orchestrates the other scripts. 
-####Usage: 
+#### Usage: 
 ```bash 
 ./netmonitor.sh
 ```
-###connections.sh 
+### connections.sh 
 Displays all established TCP connections and counts them. 
-####Usage: 
+#### Usage: 
 ```bash 
 ./connections.sh
 ```
 
-###port-scan.sh
+### port-scan.sh
 Tests if a specific port is open on a remote machine using /dev/tcp.
-####Usage: 
+#### Usage: 
 ```bash
 ./port-scan.sh <ip_address> <port>
 ```
-####Example:
+#### Example:
 ```bash
-./port-scan.sh google.com 80>
-``` 
-###Internet-check.sh
+./port-scan.sh google.com 80
+```
+### Internet-check.sh
 Verifies internet connectivity and DNS functionality 
-####Usage: 
+#### Usage: 
 ```bash 
 ./internet-check.sh
 ```
-###log-connections.sh
+### log-connections.sh
 Saves the current network state to a text file.
-####Usage: 
+#### Usage: 
 ```bash
 ./log-connections.sh
 ```
-###Example Outputs
-####Active Connections
+### Example Outputs
+#### Active Connections
 =========================================
 ACTIVE CONNECTIONS ON THIS MACHINE
 Date: Wed Apr 29 09:40:42 AM EAT 2026
@@ -104,13 +104,13 @@ ESTAB       0         0            192.168.88.72:36086          34.107.243.93:ht
 
 Total: 2 active connection(s)
 
-####Port test 
+#### Port test 
 Testing port 80 on google.com...
 
 Port 80: OPEN
 google.com is listening on this port
 
-####Internet Connectivity Test
+#### Internet Connectivity Test
 INTERNET CONNECTIVITY TEST
 ==============================
 Internet: OK (8.8.8.8 responds)
@@ -119,8 +119,8 @@ DNS: OK (google.com resolved)
 My public IP address:
 84.25.123.45
 
-##SKILLS ACQUIRED
-###Bash Scripting 
+## SKILLS ACQUIRED
+### Bash Scripting 
 + Variables : total=$(ss -t | grep ESTAB | wc -l)
 + Conditionals: if [ $? -eq 0 ]; then
 + Loops: while true; do, while read line; do
@@ -128,14 +128,14 @@ My public IP address:
 + Exit codes: $? to test success/failure
 + Redirections: > /dev/null 2>&1
 + Interactive menu: case + read
-###Network Administration
+### Network Administration
 + ss - List TCP/UDP connections
 + ping - Test connectivity and latency
 + curl - HTTP requests (public IP API)
 + lsof - Identify processes using the network
 + /dev/tcp - Port testing without external tools
 
-##POSSIBLE IMPROVEMENTS
+## POSSIBLE IMPROVEMENTS
 + Add configuration file (customizable thresholds)
 + Add IPv6 support
 + Continuous monitoring mode with auto-refresh
@@ -144,9 +144,9 @@ My public IP address:
 + Integration with Wireshark for packet capture
 + TUI interface with dialog
 
-##LICENSE 
+## LICENSE 
 This project is distributes under the MIT License.
 See the LICENSE file at the root of this repository for more information.
 
-##AUTHOR
+## AUTHOR
 RAKOTONDRAMANANA Nantenaina Mickaẽl - first year IT students
