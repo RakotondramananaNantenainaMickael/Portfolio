@@ -5,6 +5,7 @@
 **Python | HTTP Protocol | Client-Server Architecture**
 
 ---
+http://localhost:80
 
 ## Why This Project Exists
 
@@ -26,8 +27,6 @@ A static web server that:
 - Logs each request with client IP address
 - Handles port conflicts and graceful shutdowns
 - Runs on Linux, Windows, and macOS
-
-**Total lines of code:** ~40 (excluding comments)
 
 ---
 
@@ -118,20 +117,46 @@ I am pusruing a career in network administration or cybersecurity. this project 
 + For security roles: I know how attackers could target web servers 
 + For DevOps roles: I can build and understand basic serving infrastructure
 
-## Installation and Testing
+## Installation
 ```bash
-# Clone or create directory
-git clone https://github.com/yourusername/Portfolio
-cd Portfolio/LocalWeb
+# Create the directory
+mkdir LocalWeb && cd LocalWeb
+
+# Create the server script
+nano server.py
+
+# Copy the code into server.py
+# Create HTML and CSS files (see examples below)
+
+# Make the script executable (Linux/macOS)
+chmod +x server.py
 
 # Run the server
 python3 server.py
-
-# Open your browser to
-http://localhost:8080
 ```
 No dependencies. Works with any standard Python 3 installation.
 
+## Usage
+Basic usage(default port 8080, current directory)
+```bash
+python3 server.py
+```
+Specify a custom port
+```bash
+python3 server.py <port>
+```
+Specify a custom directory
+```bash
+python3 server.py 8080 /home/user/your-website
+```
+Specify both port and directory
+```python3 server.py 9000 /home/user/your-website
+```
+Open your browser and navigate to: 
+```bash 
+http://localhost:<port>
+```
+To stop the server: Press ctrl+C
 ## What I Would I Improve With More Time
 + Add command-line arguments for port and directory
 + Implement basic logging to file instead of console
