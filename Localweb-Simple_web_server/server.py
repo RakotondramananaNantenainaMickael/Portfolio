@@ -10,7 +10,8 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
 	"""Custom Handler with logging"""
 
 	def log_message(self, format, *args):
-		print(f"[{self.address_string()}] - {format % args}")
+		client_ip = self.client_address[0]
+		print(f"[{client_ip}] - {format % args}")
 
 	def handle_error(self, request, client_address):
 		print(f"Connection error from  {client_address}")
