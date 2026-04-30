@@ -26,18 +26,19 @@ Education: INSI University – Information Technology
 ### Networking
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
-| Enterprise Network Simulation | Multi-department company network with VLANs, inter-VLAN routing, NAT/PAT, ACLs, and DHCP | Cisco Packet Tracer |
+| [Enterprise Network Simulation](/Entreprise-Infrastructure(CISCO) | Multi-department company network with VLANs, inter-VLAN routing, NAT/PAT, ACLs, and DHCP | Cisco Packet Tracer |
 | *More coming soon* | - | - |
 
 ### Development
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
-| *Coming soon* | - | - |
+| [Localweb](/Localweb-Simple_web_server) | Static web server buil in Python to understand HTTP protocol and client-server architecture  | Python, HTML/CSS |
+|*More coming soon*| - | - |
 
 ### Linux & SysAdmin
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
-| NetMonitor | Bash suite for network monitoring: active connections viewer, port scanner, Internet connectivity test, and connection logger  |  Bash, Linux commands (ss, ping, curl, lsof) |
+| [NetMonitor](/NetMonitor-network_analysis) | Bash suite for network monitoring: active connections viewer, port scanner, Internet connectivity test, and connection logger  |  Bash, Linux commands (ss, ping, curl, lsof) |
 | *More coming soon*| - | - |
 
 ---
