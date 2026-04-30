@@ -83,8 +83,8 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
 ```
 Three lines that add professional logging to the built-in server.
 
-##Results and Demonstration
-###Terminal Output
+## Results and Demonstration
+### Terminal Output
 ```text
 ========================================
 LOCALWEB - Static web server
@@ -99,26 +99,26 @@ Press Ctrl+C to stop
 [127.0.0.1] - GET /page2.html HTTP/1.1
 ```
 
-###Browser Output
+### Browser Output
 Users see a fully styled webpage with: 
 + Welcome message
 + Learning checklist
 + Working navigation between pages
 
-###Error Handling Demonstrated 
+### Error Handling Demonstrated 
 |Scenario |System Response|
 |---------|---------------|
 |Port already in use| Error: {e} + exit code 1|
 |Ctrl+C during operation| Server stopped + clean exit|
 | Missing file request| Automatic 404 response via SimpleHTTPRequestHandler|
 
-##How This Fits My Carrer Goals 
+## How This Fits My Carrer Goals 
 I am pusruing a career in network administration or cybersecurity. this project shows:  
 + For networking roles: I understand HTTP, ports, and client-server
 + For security roles: I know how attackers could target web servers 
 + For DevOps roles: I can build and understand basic serving infrastructure
 
-##Installation and Testing
+## Installation and Testing
 ```bash
 # Clone or create directory
 git clone https://github.com/yourusername/Portfolio
@@ -132,7 +132,7 @@ http://localhost:8080
 ```
 No dependencies. Works with any standard Python 3 installation.
 
-##What I Would I Improve With More Time
+## What I Would I Improve With More Time
 + Add command-line arguments for port and directory
 + Implement basic logging to file instead of console
 + Add support for HTTP methods beyond GET
@@ -140,5 +140,5 @@ No dependencies. Works with any standard Python 3 installation.
 + Write unit tests for the server
 + Containerize with DOcker
 
-##Author
+## Author
 RAKOTONDRAMANANA Nantenaina Mickaël 
