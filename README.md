@@ -26,7 +26,7 @@ Education: INSI University – Information Technology
 ### Networking
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
-| [Enterprise Network Simulation](/Entreprise-Infrastructure(CISCO) | Multi-department company network with VLANs, inter-VLAN routing, NAT/PAT, ACLs, and DHCP | Cisco Packet Tracer |
+| [Enterprise Network Simulation](/Entreprise-Infrastructure(CISCO)) | Multi-department company network with VLANs, inter-VLAN routing, NAT/PAT, ACLs, and DHCP | Cisco Packet Tracer |
 | *More coming soon* | - | - |
 
 ### Development
