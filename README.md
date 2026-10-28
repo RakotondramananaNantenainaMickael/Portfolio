@@ -1,69 +1,64 @@
-# RAKOTONDRAMANANA Nantenaina Mickaël – IT Portfolio
+# RAKOTONDRAMANANA Nantenaina Mickaël – Cybersecurity Portfolio
 
 ## About Me
-I'm a first-year IT student at INSI University, Madagascar. This portfolio gathers my technical projects in networking, system administration, and development.
+I am a second-year student in **Network Systems and Database Administration (ARSB)** at **INSI**, Madagascar. 
+
+My goal is to become a **SOC Analyst** or a **GRC (Governance, Risk, and Compliance) Specialist**. I am passionate about threat detection, incident response, and securing IT infrastructures.
 
 Contact: nantenainamickael@yahoo.com  
-Linkedin: www.linkedin.com/in/nantenaina-mickaël-rakotondramanana  
+LinkedIn: [Nantenaina Mickaël Rakotondramanana](https://www.linkedin.com/in/nantenaina-mickaël-rakotondramanana)  
 Location: Madagascar  
-Education: INSI University – Information Technology
+Education: INSI – Bachelor's degree in Network Systems and Databases (ARSB)
+
+---
+
+## Certifications
+*   **IBM** – Governance, Risk, Compliance, and Data Privacy
+*   **IBM** – Vulnerability Management
+*   **Cisco** – Introduction to Cybersecurity
+*   **TryHackMe** – Pre Security Path (In Progress)
 
 ---
 
 ## Technical Skills
 
-| Category | Technologies |
-|----------|--------------|
-| Networking | Cisco Packet Tracer, VLANs, ACLs, DHCP, Routing (Static/Dynamic), Port Security |
-| Operating Systems | Windows, Linux (Kali, Debian), Basic Bash Scripting |
-| Development | Python (beginner), HTML/CSS, Git/GitHub |
-| Tools | Packet Tracer, VirtualBox, VS Code, Git |
+| Category | Technologies & Tools |
+|----------|----------------------|
+| **Cybersecurity** | SOC Fundamentals, Vulnerability Management, GRC, Threat Detection, Phishing Simulation |
+| **Networking** | TCP/IP, VLANs, Routing (Static/Dynamic), Network Troubleshooting |
+| **Operating Systems** | Linux (Kali, Debian, Ubuntu), Windows, Bash Scripting |
+| **Tools** | Wireshark, Nmap, GoPhish, Wazuh (SIEM), VirtualBox, Git/GitHub |
+| **Development** | Python (Beginner), HTML/CSS |
 
 ---
 
 ## Projects
 
-### Networking
+### Cybersecurity & SOC
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
-| [Enterprise Network Simulation](/Entreprise-Infrastructure(CISCO)) | Multi-department company network with VLANs, inter-VLAN routing, NAT/PAT, ACLs, and DHCP | Cisco Packet Tracer |
-| *More coming soon* | - | - |
-
-### Development
-| Project | Description | Tech Stack |
-|---------|-------------|------------|
-| [Localweb](/Localweb-Simple_web_server) | Static web server buil in Python to understand HTTP protocol and client-server architecture  | Python, HTML/CSS |
-|*More coming soon*| - | - |
-
-### Linux & SysAdmin
-| Project | Description | Tech Stack |
-|---------|-------------|------------|
-| [NetMonitor](/NetMonitor-network_analysis) | Bash suite for network monitoring: active connections viewer, port scanner, Internet connectivity test, and connection logger  |  Bash, Linux commands (ss, ping, curl, lsof) |
-| *More coming soon*| - | - |
-
----
+| [Phishing Simulation & Incident Response](https://github.com/RakotondramananaNantenainaMickael/Phishing-Simulation-Lab) | Designed and executed a phishing campaign using GoPhish. Conducted network analysis with Wireshark to capture cleartext credentials. Authored a professional incident report with short, mid, and long-term remediation recommendations. | GoPhish, Wireshark, Kali Linux |
 
 ---
 
 ## How to Use This Repository
-1. Browse folders by project category
-2. Each project contains its own README with specific instructions
-3. Networking projects require Cisco Packet Tracer 8.0+
-4. Code projects include setup instructions
+1. Browse the project folder.
+2. Each project contains its own `README.md` with specific instructions, setup guides, and findings.
+3. Lab projects include step-by-step documentation and incident reports.
 
 ---
 
 ## Current Focus
-- [ ] Complete enterprise network simulation
-- [ ] Linux server configuration
-- [ ] Web development basics
+- [ ] Complete the TryHackMe SOC Level 1 path.
+- [ ] Build a Home Lab for Blue Team detection (SIEM integration with Wazuh).
+- [ ] Develop a GRC Risk Register project based on NIST CSF.
 
 ---
 
 ## Connect With Me
-GitHub: https://github.com/RakotondramananaNantenainaMickael  
+GitHub: [RakotondramananaNantenainaMickael](https://github.com/RakotondramananaNantenainaMickael)  
 Email: nantenainamickael@yahoo.com  
-Linkedin: www.linkedin.com/in/nantenaina-mickaël-rakotondramanana  
----
+LinkedIn: [Nantenaina Mickaël Rakotondramanana](https://www.linkedin.com/in/nantenaina-mickaël-rakotondramanana)  
 
-*Last updated: April 2025*
+---
+*Last updated: October 2026*
