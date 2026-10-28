@@ -29,7 +29,7 @@ The campaign management console confirms the success of the attack:
 *   The link was clicked.
 *   The target's status changed to **"Submitted Data"**.
 
-![GoPhish Screenshot](path_to_your_gophish_screenshot.png)
+![images/gophish.png]
 *Figure 1: Campaign dashboard showing data submission.*
 
 ### 3.3 Network Evidence (Packet Analysis)
@@ -41,7 +41,7 @@ Network traffic analysis isolated the data exfiltration request.
 
 *Note: The use of the HTTP protocol (without "S") allowed the interception of credentials in cleartext, which constitutes a critical vulnerability in a real-world scenario.*
 
-![Wireshark Screenshot](path_to_your_wireshark_screenshot.png)
+![images/wireshark.png]
 *Figure 2: Wireshark capture showing the POST request containing cleartext credentials.*
 
 ## 4. Impact
