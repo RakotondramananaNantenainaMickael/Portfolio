@@ -1,0 +1,73 @@
+# INCIDENT REPORT – PHISHING SIMULATION
+
+**Incident ID:** INC-2026-PHISH-001  
+**Incident Date:** October 27, 2026  
+**Analyst:** [Your Name]  
+**Severity:** High (Credential Compromise)  
+**Status:** Closed  
+
+---
+
+## 1. Executive Summary
+A phishing awareness campaign was conducted against a test user. The user clicked on the malicious link contained in the email and submitted their credentials on the fake login page. Network analysis confirmed the exfiltration of authentication data in cleartext via an HTTP POST request. The incident was confirmed by the campaign management console.
+
+## 2. Incident Timeline
+*   **12:13:07** : Phishing email sent to the target (`test@lab.local`).
+*   **12:13:10** : Email opened by the target.
+*   **12:13:16** : Malicious link clicked, redirecting to the fake login page.
+*   **12:13:19** : Fake credentials (`admin` / `admin123`) submitted by the victim.
+*   **12:13:21** : Data submission confirmed in the management console.
+
+## 3. Technical Analysis
+
+### 3.1 Attack Vector
+The attack was carried out via an email campaign simulating an internal security alert. The email contained a hyperlink redirecting to a web page controlled by the attacker (Landing Page), mimicking a legitimate authentication portal.
+
+### 3.2 Business Evidence (Management Console)
+The campaign management console confirms the success of the attack:
+*   The email was opened.
+*   The link was clicked.
+*   The target's status changed to **"Submitted Data"**.
+
+![GoPhish Screenshot](path_to_your_gophish_screenshot.png)
+*Figure 1: Campaign dashboard showing data submission.*
+
+### 3.3 Network Evidence (Packet Analysis)
+Network traffic analysis isolated the data exfiltration request.
+*   **Request:** `POST /?rid=UQWF9il HTTP/1.1`
+*   **Host:** 127.0.0.1 (Phishing server)
+*   **Protocol:** HTTP (unencrypted)
+*   **Intercepted Data:** The request body (HTML Form URL Encoded) contains the fields `password=admin123` and the username.
+
+*Note: The use of the HTTP protocol (without "S") allowed the interception of credentials in cleartext, which constitutes a critical vulnerability in a real-world scenario.*
+
+![Wireshark Screenshot](path_to_your_wireshark_screenshot.png)
+*Figure 2: Wireshark capture showing the POST request containing cleartext credentials.*
+
+## 4. Impact
+*   **Affected Systems:** Target user account.
+*   **Compromised Data:** Login credentials (Username and password).
+*   **Criticality:** High. In a production environment, these credentials could have been used for privilege escalation or lateral movement.
+
+## 5. Recommendations
+
+### Short-term (Immediate - 0 to 48 hours)
+*These actions aim to contain the incident and limit immediate damage.*
+1. **Credential Reset:** Force a password reset for the compromised account (`admin`) and revoke all associated active sessions.
+2. **Attack Vector Blocking:** Add the phishing page URL (and server IP address) to the firewall and Secure Email Gateway (SEG) blocklists.
+3. **IoC (Indicators of Compromise) Search:** Scan authentication logs to verify if the compromised account was used suspiciously (login from an unknown IP, access to sensitive data) between the submission time and the reset.
+
+### Mid-term (1 to 3 months)
+*These actions aim to fix technical flaws and strengthen the security posture.*
+1. **Communications Encryption:** Enforce the **HTTPS** protocol on all internal and external authentication portals. Network capture proved that credentials were transmitted in cleartext.
+2. **MFA Deployment (Multi-Factor Authentication):** Make MFA mandatory for all privileged accounts and, ideally, for all users. This will render credential theft useless for the attacker.
+3. **Email Filtering:** Configure the email gateway to analyze inbound links (URL Rewriting) and block newly registered or suspicious domains.
+
+### Long-term (6 months and beyond)
+*These actions aim to evolve corporate culture and overall resilience.*
+1. **Continuous Awareness Campaigns:** Implement quarterly phishing simulations for employees (like the one conducted in this lab). Users must learn to verify URLs and report suspicious emails.
+2. **SIEM Integration & Automation (SOAR):** Automate phishing campaign detection by connecting simulation tools to the SIEM, to trigger an automatic alert as soon as credential submission is detected.
+3. **HR Process Review:** Add mandatory identity verification (outside of email) for password reset requests or changes to bank details.
+
+---
+*End of report.*
