@@ -5,6 +5,8 @@ I am a second-year student in **Network Systems and Database Administration (ARS
 
 My goal is to become a **SOC Analyst** or a **GRC (Governance, Risk, and Compliance) Specialist**. I am passionate about threat detection, incident response, and securing IT infrastructures.
 
+I write all my technical documentation and incident reports in English to meet international standards, and I am fully fluent in French and Malagasy. This allows me to collaborate effectively with both local and international teams.
+
 Contact: nantenainamickael@yahoo.com  
 LinkedIn: [Nantenaina Mickaël Rakotondramanana](https://www.linkedin.com/in/nantenaina-mickaël-rakotondramanana)  
 Location: Madagascar  
