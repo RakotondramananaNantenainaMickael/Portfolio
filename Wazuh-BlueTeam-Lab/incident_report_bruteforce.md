@@ -22,15 +22,19 @@ A brute force attack was detected against the SSH service of the target server (
 ### 3.1 Attack Vector
 The attacker (192.168.56.1) used the `Hydra` tool to perform a dictionary attack against the `admin` user on the target (192.168.56.10) via the SSH protocol.
 
+![Hydra Attack Execution](images/hydra_attack.png)
+*Figure 1: Hydra brute force attack in progress against the SSH service.*
+
 ### 3.2 Detection & Evidence
-The Wazuh Manager successfully ingested the authentication logs forwarded by the `ubuntu_target` agent.
-*   **Triggered Rules:** 
-    *   `5760`: sshd: authentication failed.
-    *   `2502`: syslog: User missed the password more than one time.
-*   **Source IP:** 192.168.56.1 (Kali)
-*   **Target User:** admin
+The Wazuh Manager successfully ingested the authentication logs forwarded by the `ubuntu_target` agent. The dashboard clearly shows the correlation of events and the server's defensive reaction.
 
 ![Wazuh Dashboard Alert](images/wazuh_dashboard.png)
+*Figure 2: Wazuh Dashboard showing the burst of authentication failures and the alert details.*
+
+The detailed log extraction confirms the attacker's IP and the targeted account.
+
+![Wazuh Alert Details](images/wazuh_details.png)
+*Figure 3: Detailed view of the alert, confirming the source IP and the "Maximum authentication attempts exceeded" rule.*
 
 ### 3.3 MITRE ATT&CK Mapping
 *   **Tactic:** Credential Access
