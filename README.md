@@ -26,10 +26,10 @@ Education: INSI – Bachelor's degree in Network Systems and Databases (ARSB)
 
 | Category | Technologies & Tools |
 |----------|----------------------|
-| **Cybersecurity** | SOC Fundamentals, Vulnerability Management, GRC, Threat Detection, Phishing Simulation |
+| **Cybersecurity** | SOC Fundamentals, Vulnerability Management, GRC, Threat Detection, Phishing Simulation, Log Analysis |
 | **Networking** | TCP/IP, VLANs, Routing (Static/Dynamic), Network Troubleshooting |
 | **Operating Systems** | Linux (Kali, Debian, Ubuntu), Windows, Bash Scripting |
-| **Tools** | Wireshark, Nmap, GoPhish, Wazuh (SIEM), VirtualBox, Git/GitHub |
+| **Tools** | Wireshark, Nmap, GoPhish, Wazuh (SIEM), Hydra, VirtualBox, Git/GitHub |
 | **Development** | Python (Beginner), HTML/CSS |
 
 ---
@@ -39,20 +39,21 @@ Education: INSI – Bachelor's degree in Network Systems and Databases (ARSB)
 ### Cybersecurity & SOC
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
+| [Wazuh SIEM & Blue Team Lab](https://github.com/RakotondramananaNantenainaMickael/Wazuh-BlueTeam-Lab) | Deployed a Wazuh SIEM, configured an Ubuntu agent, and simulated an SSH brute force attack using Hydra. Analyzed authentication logs, correlated events, and authored a detailed incident report mapped to MITRE ATT&CK. | Wazuh, Hydra, Ubuntu Server, Kali Linux |
 | [Phishing Simulation & Incident Response](https://github.com/RakotondramananaNantenainaMickael/Phishing-Simulation-Lab) | Designed and executed a phishing campaign using GoPhish. Conducted network analysis with Wireshark to capture cleartext credentials. Authored a professional incident report with short, mid, and long-term remediation recommendations. | GoPhish, Wireshark, Kali Linux |
 
 ---
 
 ## How to Use This Repository
-1. Browse the project folder.
-2. Each project contains its own `README.md` with specific instructions, setup guides, and findings.
-3. Lab projects include step-by-step documentation and incident reports.
+1. Browse the project folders above.
+2. Each project contains its own `README.md` with specific architecture details, setup guides, and project overview.
+3. Lab projects include step-by-step documentation, evidence (screenshots), and full incident reports.
 
 ---
 
 ## Current Focus
+- [ ] Automate Wazuh alerts using a SoAR platform or custom scripts.
 - [ ] Complete the TryHackMe SOC Level 1 path.
-- [ ] Build a Home Lab for Blue Team detection (SIEM integration with Wazuh).
 - [ ] Develop a GRC Risk Register project based on NIST CSF.
 
 ---
