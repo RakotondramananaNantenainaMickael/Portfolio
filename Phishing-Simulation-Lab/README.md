@@ -20,4 +20,4 @@ The lab simulates a targeted phishing email sent to a user. The user clicks the 
 - **Phishing Simulation:** Deploying GoPhish, configuring SMTP profiles, and creating email templates.
 - **Network Analysis:** Using Wireshark to capture and analyze HTTP traffic.
 - **Incident Response:** Investigating a credential compromise and correlating business evidence (dashboard) with technical evidence (packet capture).
-- **Reporting:** Writing professional bilingual incident reports with short, mid, and long-term remediation recommendations (HTTPS enforcement, MFA, user awareness).
+- **Reporting:** Writing professional incident reports with short, mid, and long-term remediation recommendations (HTTPS enforcement, MFA, user awareness).
