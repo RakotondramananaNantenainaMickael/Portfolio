@@ -14,8 +14,7 @@ This project is a personal home lab designed to simulate a phishing campaign and
 The lab simulates a targeted phishing email sent to a user. The user clicks the malicious link, is redirected to a fake login page hosted by GoPhish, and submits their credentials. Wireshark is used to intercept the cleartext HTTP POST request, proving the exfiltration of sensitive data.
 
 ## Deliverables
-- [Read the full Incident Report (English)](incident_report_en.md)
-- [Lire le rapport d'incident complet (Français)](rapport_phishing_fr.md)
+- [Read the full Incident Report](incident_report.md)
 
 ## Skills Demonstrated
 - **Phishing Simulation:** Deploying GoPhish, configuring SMTP profiles, and creating email templates.
