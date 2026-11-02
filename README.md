@@ -59,7 +59,7 @@ Education: INSI – Bachelor's degree in Network Systems and Databases (ARSB)
 ---
 
 ## Connect With Me 
-Email: nantenainamickael@yahoo.com  
+Email: nante.mick@gmail.com  
 LinkedIn: [Nantenaina Mickaël Rakotondramanana](https://www.linkedin.com/in/nantenaina-mickaël-rakotondramanana)  
 
 ---
