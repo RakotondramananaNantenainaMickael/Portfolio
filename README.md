@@ -17,6 +17,7 @@ Education: INSI – Bachelor's degree in Network Systems and Databases (ARSB)
 ## Certifications
 *   **IBM** – Governance, Risk, Compliance, and Data Privacy
 *   **IBM** – Vulnerability Management
+*   **IBM** - System and Network Security
 *   **Cisco** – Introduction to Cybersecurity
 *   **TryHackMe** – Pre Security Path (In Progress)
 
