@@ -25,8 +25,7 @@ The assessment identified several security misconfigurations, including:
 *Note: No critical High-severity vulnerabilities were found during this unauthenticated scan, as deeper application flaws (like SQLi) require authenticated access.*
 
 ## Deliverables
-- 📄 **[Read the full VAPT Report here](./vapt_report.md)**
-- *(Optional) Add a link to your Nmap scan text file.*
+- **[Read the full VAPT Report here](./vapt_report.md)**
 
 ## Skills Demonstrated
 - **Network Reconnaissance:** Nmap port and service scanning.
