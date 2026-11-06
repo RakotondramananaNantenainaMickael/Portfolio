@@ -57,7 +57,7 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
 ### 3.2 Missing Anti-clickjacking Header
 - **Severity:** Medium
 - **OWASP Mapping:** A05:2021 - Security Misconfiguration
-- **Description:** The application does not set the `X-Frame-Options` HTTP header. This allows the page to be embedded in an `<iframe>` on a malicious site, enabling CLickjacking attacks where users are tricked into clicking hidden elements.
+- **Description:** The application does not set the `X-Frame-Options` HTTP header. This allows the page to be embedded in an `<iframe>` on a malicious site, enabling Clickjacking attacks where users are tricked into clicking hidden elements.
 - **Evidence:**
   ![Evidence](./images/No_clickjacking.jpeg)
 - *Remediation:** Add the `X-Frame-Options` header to the server configuration.
@@ -72,20 +72,20 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
 - **Evidence:**
   ![Evidence](./images/Directory_browsing.jpeg)
 - **Remediation:** Disable directory listing at the web server level.
-  Apache Fix : Add this to the `.htaccess` fle or virtual host configuration:
+  Apache Fix : Add this to the `.htaccess` file or virtual host configuration:
   ```apache
   Options -Indexes
   ```
 
-## 3.4 Cookie No HttpsOnly Flag
+### 3.4 Cookie No HttpsOnly Flag
 - **Severity:** Low
 - **OWASP Mapping:** A05:2021 - Security Misconfiguration
 - **Description:** The session cookie (`PHPSESSID`) is set without the `HttpOnly` flag. If a Cross-Site Scripting (XSS) vulnerability exists, an attacker could use Javascript to steal the cookie and hijack the session.
 - **Evidence:**
-  ![evidence](DVWA-Vulnerablity-Assessment/images/cookies.jpeg
-- *Remediation:** Ensure the application sets the HttpOnly and secure flags on all session cookies.
+  ![evidence](./images/cookies.jpeg)
+- **Remediation:** Ensure the application sets the HttpOnly and secure flags on all session cookies.
 
-## 3.5 Information Disclosure: Server Vision (Nmap)
+### 3.5 Information Disclosure: Server Version (Nmap)
 - **Severity:** Low/Informational
 - **Description:** Nmap revealed that port 80 is running `Apache httpd 2.4.25 (Debian)` and port 22 is running `openSSH`.Exposing exact software versions allows attackers to search for known CVEs (Common Vulnerabilities and Exposures) specific to those versions.
 - **Evidence:**
@@ -97,19 +97,19 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
   ServerSignature Off
   ```
 
-## 3.6 Infrastructure Exposure: SSH (Nmap)
+### 3.6 Infrastructure Exposure: SSH (Nmap)
 - **Severity:**: Medium
 - **Description:** Port 22 (SSH) is exposed on the network. If weak passwords or default configurations are used, this service is vulnerable to brute-force attacks.
 - **Remediation:**
     1. Disable password authentication and enforce SSH Keys.
     2. Use a tool like `Fail2Ban` to block IPs after multiple failed login attempts.
     3. Restrict access to Port 22 via firewall to trusted IP ranges only.
-# 4. Strategic Recommendations
+## 4. Strategic Recommendations
   1. **Immediate (0-48h):** Implement HTTPS and add the `X-Frame-Options` header.
   2. **Short-term (1-2 weeks):** Disable directory browsing and patch the web server to the latest stable version.
   3. **Long-term (Continuous):** Set up a Web Application Firewall (WAF) like ModSecurity, and conduct regular vulnerability scans.
 
-# 5. Disclaimer
+## 5. Disclaimer
 This assessment was conducted in a controlled lab environment. No unauthorized testing was performed. This findings are based on automated scans and may not cover all potential vulnerabilities, especially those requiring authenticated access.
 
 End of Report
