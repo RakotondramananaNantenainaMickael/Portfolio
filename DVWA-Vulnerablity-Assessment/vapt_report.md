@@ -45,7 +45,7 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
 - **OWASP Mapping:** A02:2021 - Cryptographic Failures
 - **Description:** The application is served entirely over HTTP (Port 80) without HTTPS encryption. All communications, including potential login credentials, are transmitted in cleartext over the network.
 - **Evidence:**
- ![Evidence](DVWA-Vulnerablity-Assessment/images/HTTP_Only.jpeg)
+ ![Evidence](./images/HTTP_Only.jpeg)
 - **Remediation:** Configure the web server to use an SSL/TLS certificate and enforce HTTPS.
 
   *Apache Fix:* Use `mod_ssl` and redirect all HTTP traffic to HTTPS via `.htaccess`:
@@ -59,7 +59,7 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
 - **OWASP Mapping:** A05:2021 - Security Misconfiguration
 - **Description:** The application does not set the `X-Frame-Options` HTTP header. This allows the page to be embedded in an `<iframe>` on a malicious site, enabling CLickjacking attacks where users are tricked into clicking hidden elements.
 - **Evidence:**
-  ![Evidence](DVWA-Vulnerablity-Assessment/images/No_clickjacking.jpeg)
+  ![Evidence](./images/No_clickjacking.jpeg)
 - *Remediation:** Add the `X-Frame-Options` header to the server configuration.
   *Apache Fix:*
   ```apache
@@ -70,7 +70,7 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
 - **OWASP Mapping:** A01:2021 - Broken Access Control
 - **Description:** The web server displays a list of files for directories lacking an index file (e.g., `/dvwa/images`). This allows attackers to enumerate hidden files, backup scripts, or sensitive information.
 - **Evidence:**
-  ![Evidence](DVWA-Vulnerablity-Assessment/images/Directory_browsing.jpeg)
+  ![Evidence](./images/Directory_browsing.jpeg)
 - **Remediation:** Disable directory listing at the web server level.
   Apache Fix : Add this to the `.htaccess` fle or virtual host configuration:
   ```apache
@@ -89,7 +89,7 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
 - **Severity:** Low/Informational
 - **Description:** Nmap revealed that port 80 is running `Apache httpd 2.4.25 (Debian)` and port 22 is running `openSSH`.Exposing exact software versions allows attackers to search for known CVEs (Common Vulnerabilities and Exposures) specific to those versions.
 - **Evidence:**
-  ![evidence](DVWA-Vulnerablity-Assessment/images/nmap.png)
+  ![evidence](./images/nmap.png)
 - **Remediation:** Hide server signatures.
   Apache fix:
   ```apache
