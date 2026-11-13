@@ -29,8 +29,8 @@ The findings are mapped to the **OWASP Top 10 for LLM Applications** and the **O
 - **Technical Reporting:** Writing detailed, client-ready audit reports with short, mid, and long-term remediation steps.
 
 ## Deliverables
-- 📄 **[Read the Full Audit Report](./audit_report.md)** - Detailed analysis of each finding with PoC and remediation.
-- 💻 **[Vulnerable Source Code](./src/app.py)** - The Python application used for testing.
+-  **[Read the Full Audit Report](./audit_report.md)** - Detailed analysis of each finding with PoC and remediation.
+-  **[Vulnerable Source Code](./src/app.py)** - The Python application used for testing.
 
 ---
 *Disclaimer: This assessment was conducted in a controlled educational environment for portfolio purposes. No unauthorized testing was performed.*
