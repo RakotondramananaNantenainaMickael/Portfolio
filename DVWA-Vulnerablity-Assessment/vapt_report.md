@@ -13,7 +13,7 @@
 
 A security assessment was conducted on a web application (DVWA) hosted on an Ubuntu server. The assessment aimed to identify potential vulnerabilities and configuration flaws that could be exploited by an attacker.
 
-The scan revealed **4 main findings**: one infrastructure misconfiguration (exposed SSH), and three web application misconfigurations (Missing HTTPS, Clickjacking vulnerability, and Directory Browsing). 
+The scan documented **six observations**: four Medium findings (missing HTTPS, missing anti-clickjacking protection, directory browsing and exposed SSH), one Low finding (a session cookie missing the `HttpOnly` flag), and one Informational observation (server-version disclosure). 
 
 *Note: As this was an unauthenticated scan (performed without logging into the application), vulnerabilities requiring authentication (such as SQL Injection or Stored XSS within the app) were not tested.*
 
@@ -86,7 +86,7 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
 - **Remediation:** Ensure the application sets the HttpOnly and secure flags on all session cookies.
 
 ### 3.5 Information Disclosure: Server Version (Nmap)
-- **Severity:** Low/Informational
+- **Severity:** Informational
 - **Description:** Nmap revealed that port 80 is running `Apache httpd 2.4.25 (Debian)` and port 22 is running `openSSH`.Exposing exact software versions allows attackers to search for known CVEs (Common Vulnerabilities and Exposures) specific to those versions.
 - **Evidence:**
   ![evidence](./images/nmap.png)
