@@ -1,78 +1,62 @@
-# RAKOTONDRAMANANA Nantenaina Mickaël – Cybersecurity Portfolio
+# Nantenaina Mickaël Rakotondramanana
+### Junior Cybersecurity & IT Risk Analyst | GRC • Risk Assessment • Security Operations
 
-## About Me
-I am a second-year student in **Network Systems and Database Administration (ARSB)** at **INSI**, Madagascar. 
+I am a second-year **Network Systems and Database Administration (ARSB)** student at **INSI, Madagascar**, building practical experience in cybersecurity with a strong interest in **Governance, Risk and Compliance (GRC)**.
 
-My goal is to become a **SOC Analyst** or a **GRC (Governance, Risk, and Compliance) Specialist**. I am passionate about threat detection, incident response, and securing IT infrastructures. 
+My work combines risk assessment and security documentation with hands-on technical labs in vulnerability assessment, SIEM monitoring, phishing investigation and AI application security. The projects in this portfolio are **independent educational labs and fictional scenarios**, not paid client engagements or formal compliance audits.
 
-Alongside my studies, I offer **freelance cybersecurity services**, including Vulnerability Assessments (VAPT), IT support, and technical documentation. I build hands-on home labs to simulate real-world scenarios, from technical defense (SOC) to governance (GRC) and AI security (LLM Red Teaming).
-
-I write all my technical documentation in English. I am also fluent in French and Malagasy, which helps me work easily with both local and international teams.
-
-Contact: nante.mick@gmail.com  
-LinkedIn: [Nantenaina Mickaël Rakotondramanana](https://www.linkedin.com/in/nantenaina-mickaël-rakotondramanana)  
-Location: Madagascar  
-Education: INSI – Bachelor's degree in Network Systems and Databases (ARSB)
+- **Location:** Madagascar
+- **Languages:** French and Malagasy; technical English
+- **Email:** [nante.mick@gmail.com](mailto:nante.mick@gmail.com)
+- **LinkedIn:** [Nantenaina Mickaël Rakotondramanana](https://www.linkedin.com/in/nantenaina-mickaël-rakotondramanana)
 
 ---
+
+## Focus Areas
+
+- **GRC & Risk:** risk registers, likelihood/impact scoring, gap analysis, remediation planning, NIST CSF 2.0
+- **Security Operations:** Wazuh SIEM, authentication-log analysis, alert triage, incident reporting
+- **Vulnerability Assessment:** network reconnaissance, web security misconfigurations, OWASP ZAP, Nmap
+- **AI Application Security:** prompt injection testing, RAG security, sensitive-data exposure, OWASP guidance
+- **Technical Documentation:** assessment reports, incident reports, evidence capture, remediation recommendations
+
+## Selected Projects
+
+| Project | What I worked on | Evidence / Deliverables |
+|---|---|---|
+| **[EcoMada – GRC Risk Assessment](./ecomada-grc-risk-assessment/)** | Fictional company scenario assessed against selected NIST CSF 2.0 outcomes; gap analysis, 5×5 risk scoring and prioritized remediation planning. | [Risk assessment workbook](./ecomada-grc-risk-assessment/EcoMada_GRC_Assessment%20.xlsx) · [PDF report](./ecomada-grc-risk-assessment/EcoMada_GRC_Report.pdf) · [Methodology](./ecomada-grc-risk-assessment/02_Methodology/risk_methodology.md) |
+| **[Wazuh SIEM – Blue Team Lab](./Wazuh-BlueTeam-Lab/)** | Deployed a Wazuh monitoring lab, generated SSH password-guessing activity and reviewed authentication alerts and supporting logs. | [Incident report](./Wazuh-BlueTeam-Lab/incident_report_bruteforce.md) |
+| **[Web Application Security Assessment – DVWA](./DVWA-Vulnerablity-Assessment/)** | Used Nmap and OWASP ZAP in an isolated lab to identify exposed services and web-server security misconfigurations. The documented scan was unauthenticated. | [Vulnerability assessment report](./DVWA-Vulnerablity-Assessment/vapt_report.md) |
+| **[Phishing Simulation & Investigation](./Phishing-Simulation-Lab/)** | Simulated a phishing scenario with GoPhish in an isolated host-only lab and examined HTTP form traffic with Wireshark using test credentials. | [Incident report](./Phishing-Simulation-Lab/incident_report.md) |
+| **[LLM Application Security Lab](./llm-red-teaming-lab/)** | Tested a locally hosted recruitment-assistant application for prompt-injection, unsafe Markdown rendering, RAG trust and access-control weaknesses. | [Audit report](./llm-red-teaming-lab/audit_report.md) · [Application source](./llm-red-teaming-lab/src/app.py) |
 
 ## Certifications
-*   **IBM** – Governance, Risk, Compliance, and Data Privacy
-*   **IBM** – Vulnerability Management
-*   **IBM** – System and Network Security
-*   **IBM** – Cloud Security
-*   **Cisco** – Introduction to Cybersecurity
+
+- [IBM – Governance, Risk, Compliance, and Data Privacy](https://www.credly.com/badges/5236e78d-8722-4035-ba8d-d24a84c430c9/public_url)
+- [IBM – Vulnerability Management](https://www.credly.com/badges/ddd26e76-b695-412e-bd5b-0d6e0bf79d21/public_url)
+- [IBM – System and Network Security](https://www.credly.com/badges/464d632f-02ff-4d41-9f5f-51fbe2a0f848/public_url)
+- [IBM – Cloud Security](https://www.credly.com/badges/60c9cc80-aae9-4749-88d4-6ef7912c8364/public_url)
+- [Cisco – Introduction to Cybersecurity](https://www.credly.com/badges/d7dfc6d8-65e9-488a-9b31-29f430f1178e/public_url)
+
+## Tools & Technologies
+
+| Area | Tools / Concepts |
+|---|---|
+| GRC & documentation | NIST CSF 2.0, risk registers, gap analysis, Markdown, Excel |
+| Security testing | Nmap, OWASP ZAP, Wireshark |
+| Security monitoring | Wazuh, Linux authentication logs, MITRE ATT&CK |
+| Phishing simulation | GoPhish, MailHog |
+| AI security lab | Python, Streamlit, Ollama, Mistral |
+| Systems & networking | Kali Linux, Ubuntu, Debian, Windows, TCP/IP, VLANs, VirtualBox |
+| Scripting & version control | Python, Bash, Git, GitHub |
+
+## Current Learning Priorities
+
+- Deepen practical GRC skills: risk treatment, control mapping and evidence-based assessment.
+- Expand Blue Team skills with Windows event logs, Sysmon and Active Directory monitoring.
+- Improve vulnerability assessment methodology and authenticated testing in controlled labs.
+- Continue developing clear, reproducible technical reports.
 
 ---
 
-## Technical Skills
-
-| Category | Technologies & Tools |
-|----------|----------------------|
-| **Cybersecurity** | SOC Fundamentals, Vulnerability Management, GRC, Threat Detection, Phishing Simulation, Log Analysis, VAPT, Red Teaming |
-| **AI Security** | Prompt Injection, LLM Data Exfiltration, RAG Poisoning, OWASP LLM Top 10 |
-| **Networking** | TCP/IP, VLANs, Routing (Static/Dynamic), Network Troubleshooting, pfSense |
-| **Operating Systems** | Linux (Kali, Debian, Ubuntu), Windows, Bash Scripting |
-| **Tools** | Wireshark, Nmap, OWASP ZAP, GoPhish, Wazuh (SIEM), Hydra, Ollama (Mistral), Streamlit, VirtualBox, Git/GitHub |
-| **Documentation** | Technical Writing, Incident Reporting, Risk Assessment (NIST CSF), Markdown, CVSS Scoring |
-| **Development** | Python (Scripting), HTML/CSS |
-
----
-
-## Projects
-
-### AI Security & Governance
-| Project | Description | Tech Stack |
-|---------|-------------|------------|
-| [LLM Red Teaming & Security Audit](https://github.com/RakotondramananaNantenainaMickael/ecomada-llm-security-audit) | Conducted a Red Teaming audit on an AI-powered ATS. Identified critical vulnerabilities (OWASP LLM Top 10) including Prompt Injection, RAG Data Poisoning, Zero-Click Data Exfiltration, and IDOR. | Mistral, Ollama, Streamlit, Python |
-| [GRC Risk Assessment (NIST CSF 2.0)](https://github.com/RakotondramananaNantenainaMickael/ecomada-grc-risk-assessment) | Performed a full Governance, Risk, and Compliance assessment for a fictional SaaS company. Built a Gap Analysis, 5x5 Risk Register, and a 30-day remediation plan aligned with NIST CSF 2.0. | NIST CSF 2.0, Risk Management |
-
-### Cybersecurity & SOC
-| Project | Description | Tech Stack |
-|---------|-------------|------------|
-| [Web App Vulnerability Assessment (VAPT)](https://github.com/RakotondramananaNantenainaMickael/DVWA-Vulnerability-Assessment) | Performed a full security audit on a vulnerable web application (DVWA). Identified misconfigurations and authored a professional 5-page PDF report with CVSS scores and Apache remediation steps. | OWASP ZAP, Nmap, Kali Linux |
-| [Wazuh SIEM & Blue Team Lab](https://github.com/RakotondramananaNantenainaMickael/Wazuh-BlueTeam-Lab) | Deployed a Wazuh SIEM, configured an Ubuntu agent, and simulated an SSH brute force attack using Hydra. Correlated events and authored an incident report mapped to MITRE ATT&CK. | Wazuh, Hydra, Ubuntu Server |
-| [Phishing Simulation & Incident Response](https://github.com/RakotondramananaNantenainaMickael/Phishing-Simulation-Lab) | Designed and executed a phishing campaign using GoPhish. Conducted network analysis with Wireshark to capture cleartext credentials. Authored a professional incident report. | GoPhish, Wireshark, Kali Linux |
-
----
-
-## How to Use This Repository
-1. Browse the project folders above.
-2. Each project contains its own `README.md` with specific architecture details, setup guides, and project overview.
-3. Lab projects include step-by-step documentation, evidence (screenshots), and full professional reports.
-
----
-
-## Current Focus
-- [ ] Build a Windows Active Directory Home Lab (Sysmon, Event Logs, Kerberoasting).
-- [ ] Deploy a secure AWS environment (IAM, S3, CloudTrail) using the Free Tier.
-- [ ] Land my first freelance mission (VAPT or IT support) and document it.
-- [ ] Contribute to an open-source AI security project (Garak or PyRIT). 
----
-
-## Connect With Me 
-Email: nante.mick@gmail.com  
-LinkedIn: [Nantenaina Mickaël Rakotondramanana](https://www.linkedin.com/in/nantenaina-mickaël-rakotondramanana)  
-
----
-*Last updated: November 2026*
+*Portfolio projects are for educational and demonstration purposes. Scenarios may be fictional and testing was performed in controlled environments. They do not represent client engagements, independent certification audits, or a guarantee of regulatory compliance.*

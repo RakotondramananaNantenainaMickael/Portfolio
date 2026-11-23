@@ -27,9 +27,9 @@ Risks were scored using a **5x5 Risk Matrix**:
 - **Exposure Score** = Likelihood x Impact
 
 ## Key Findings
-The assessment identified three critical (High) risks that require immediate attention:
+The assessment identified three priority risks for treatment. Their exact priority labels should follow the scoring thresholds documented in the risk methodology:
 1.  **Lack of MFA (Score 25):** Cloud and administrative accounts (Shopify, AWS) rely solely on passwords, which are often shared.
-2.  **Unmanaged Field Devices (Score 16):** No asset inventory exists for the 10 tablets used in the field, preventing remote wipes in case of theft.
+2.  **Unmanaged Field Devices (Score 16):** No reliable inventory and ownership records exist for the 10 field tablets, making it harder to identify affected devices and coordinate protective actions if one is lost or stolen.
 3.  **Untested Backups (Score 15):** No restore tests have been documented, putting critical customer data at risk during a ransomware attack.
 
 ## Deliverables

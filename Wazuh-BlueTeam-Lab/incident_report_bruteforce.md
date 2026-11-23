@@ -2,20 +2,20 @@
 
 **Incident ID:** INC-2026-SOC-002  
 **Incident Date:** October 30, 2026  
-**Analyst:** [Ton Nom]  
+**Analyst:** Nantenaina Mickaël Rakotondramanana  
 **Severity:** High (Unauthorized Access Attempt)  
 **Status:** Closed  
 
 ---
 
 ## 1. Executive Summary
-A brute force attack was detected against the SSH service of the target server (`ubuntu_target`). The Wazuh SIEM correlated multiple authentication failures and generated high-severity alerts. The server's built-in SSH rate limiting (`MaxStartups`) eventually blocked the attacker, preventing unauthorized access.
+A brute force attack was detected against the SSH service of the target server (`ubuntu_target`). The Wazuh SIEM correlated multiple authentication failures and generated high-severity alerts. The SSH service subsequently rejected further connection attempts. The available evidence confirms that no successful login occurred during this simulation; it does not by itself establish which SSH daemon limit caused the rejection.
 
 ## 2. Incident Timeline
 *   **12:42:57** : Initial Hydra attack started from Kali Linux (192.168.56.1).
 *   **12:43:04** : First Wazuh alert triggered (Rule 5760 - SSH authentication failed).
 *   **12:43:13** : Wazuh triggers a Level 10 alert for multiple password failures (Rule 2502).
-*   **12:43:36** : The SSH server blocks the connection, returning a "Maximum authentication attempts exceeded" error (Rule 5758).
+*   **12:43:36** : The SSH server rejects a subsequent connection attempt with a "Maximum authentication attempts exceeded" message (Rule 5758).
 
 ## 3. Technical Analysis
 

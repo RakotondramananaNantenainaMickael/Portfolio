@@ -2,14 +2,14 @@
 
 **Incident ID:** INC-2026-PHISH-001  
 **Incident Date:** October 27, 2026  
-**Analyst:** [Your Name]  
+**Analyst:** Nantenaina Mickaël Rakotondramanana  
 **Severity:** High (Credential Compromise)  
 **Status:** Closed  
 
 ---
 
 ## 1. Executive Summary
-A phishing awareness campaign was conducted against a test user. The user clicked on the malicious link contained in the email and submitted their credentials on the fake login page. Network analysis confirmed the exfiltration of authentication data in cleartext via an HTTP POST request. The incident was confirmed by the campaign management console.
+A phishing scenario was simulated against a test account in an isolated home lab. The credentials used were synthetic test credentials, not real user credentials. The user clicked on the malicious link contained in the email and submitted their credentials on the fake login page. Network analysis confirmed the exfiltration of authentication data in cleartext via an HTTP POST request. The incident was confirmed by the campaign management console.
 
 ## 2. Incident Timeline
 *   **12:13:07** : Phishing email sent to the target (`test@lab.local`).

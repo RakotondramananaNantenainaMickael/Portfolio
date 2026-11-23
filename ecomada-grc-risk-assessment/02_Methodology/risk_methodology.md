@@ -39,7 +39,7 @@ Based on the score, risks are prioritized as follows:
 
 | Exposure Score | Priority | Action Required |
 | :--- | :--- | :--- |
-| **16 - 25** | **Critical / High** | Immediate remediation required (within 30 days). |
+| **16 - 25** | **Critical** | Immediate remediation required (within 30 days). |
 | **10 - 15** | **High** | Remediation required (within 90 days). |
 | **5 - 9** | **Medium** | Remediation planned for the next fiscal cycle. |
 | **1 - 4** | **Low** | Acceptable risk; monitor periodically. |

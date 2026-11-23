@@ -1,34 +1,32 @@
-# Web Application VAPT Lab (DVWA)
+# DVWA Web Security Assessment Lab
 
 ## Overview
-This project is a personal cybersecurity lab where I conducted a **Vulnerability Assessment and Penetration Test (VAPT)** on a deliberately vulnerable web application (DVWA). 
+A scoped, educational assessment of a deliberately vulnerable web application (DVWA) hosted on an Ubuntu Server VM. The documented exercise focused on network reconnaissance and **unauthenticated** web-server checks; it was not a full authenticated penetration test.
 
-The goal of this project was to practice using industry-standard security tools, simulate the workflow of a security auditor, and write a professional, client-ready vulnerability report.
+## Lab Setup
+- **Assessment machine:** Kali Linux
+- **Target:** Ubuntu Server running DVWA
+- **Virtualization / network:** VirtualBox, host-only network
+- **Tools:** Nmap and OWASP ZAP
 
-## Lab Architecture
-- **Attacker Machine:** Kali Linux (Nmap, OWASP ZAP)
-- **Target Machine:** Ubuntu Server (Docker) running DVWA
-- **Network:** Host-Only VirtualBox network
+## Areas Reviewed
+- Exposed services and service information
+- HTTP transport without HTTPS
+- Missing anti-clickjacking response header
+- Directory listing
+- Session-cookie security attributes
+- Server-version disclosure
 
-## Tools Used
-- **Nmap:** For port scanning and service version detection.
-- **OWASP ZAP:** For automated web application vulnerability scanning (spidering, passive and active scans).
+The report records the scan scope, evidence, severity assessment and recommended remediation. Testing that requires an authenticated DVWA session, including authenticated SQL injection and stored XSS testing, was outside this exercise.
 
-## Key Findings (Summary)
-The assessment identified several security misconfigurations, including:
-- Missing Transport Layer Security (HTTP Only).
-- Missing Anti-clickjacking Headers.
-- Directory Browsing enabled.
-- Session cookies missing the `HttpOnly` flag.
-- Information disclosure (Server version exposed via Nmap).
+## Report
+- [Read the vulnerability assessment report](./vapt_report.md)
 
-*Note: No critical High-severity vulnerabilities were found during this unauthenticated scan, as deeper application flaws (like SQLi) require authenticated access.*
+## Skills Practiced
+- Network reconnaissance with Nmap
+- Automated web application scanning with OWASP ZAP
+- Review of HTTP security headers and cookie attributes
+- Finding classification and remediation writing
 
-## Deliverables
-- **[Read the full VAPT Report here](./vapt_report.md)**
-
-## Skills Demonstrated
-- **Network Reconnaissance:** Nmap port and service scanning.
-- **Web App Security:** Identifying misconfigurations and missing security headers.
-- **Risk Analysis:** Classifying findings by severity using OWASP Top 10 mapping.
-- **Technical Writing:** Writing a professional audit report with actionable remediation steps (Apache configurations).
+---
+*Educational lab only. Findings are limited to the stated target, scan conditions and evidence; automated scanning does not establish that an application is free of other vulnerabilities.*

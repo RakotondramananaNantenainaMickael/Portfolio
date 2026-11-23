@@ -13,7 +13,7 @@
 
 A security assessment was conducted on a web application (DVWA) hosted on an Ubuntu server. The assessment aimed to identify potential vulnerabilities and configuration flaws that could be exploited by an attacker.
 
-The scan revealed **4 main findings**: one infrastructure misconfiguration (exposed SSH), and three web application misconfigurations (Missing HTTPS, Clickjacking vulnerability, and Directory Browsing). 
+The scan documented **six observations**: four Medium findings (missing HTTPS, missing anti-clickjacking protection, directory browsing and exposed SSH), one Low finding (a session cookie missing the `HttpOnly` flag), and one Informational observation (server-version disclosure). 
 
 *Note: As this was an unauthenticated scan (performed without logging into the application), vulnerabilities requiring authentication (such as SQL Injection or Stored XSS within the app) were not tested.*
 
@@ -22,9 +22,9 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
 | Severity | Count | Findings |
 | :--- | :--- | :--- |
 | **High** | 0 | - |
-| **Medium** | 3 | HTTP Only Site, Missing Anti-clickjacking, Directory Browsing |
-| **Low** | 1 | Cookie No HttpOnly Flag |
-| **Info** | 2 | Server Version Disclosure, SSH Exposure |
+| **Medium** | 4 | HTTP Only Site, Missing Anti-clickjacking, Directory Browsing, SSH Exposure |
+| **Low** | 1 | Cookie missing HttpOnly flag |
+| **Info** | 1 | Server Version Disclosure |
 
 ---
 
@@ -77,7 +77,7 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
   Options -Indexes
   ```
 
-### 3.4 Cookie No HttpsOnly Flag
+### 3.4 Session Cookie Missing HttpOnly Flag
 - **Severity:** Low
 - **OWASP Mapping:** A05:2021 - Security Misconfiguration
 - **Description:** The session cookie (`PHPSESSID`) is set without the `HttpOnly` flag. If a Cross-Site Scripting (XSS) vulnerability exists, an attacker could use Javascript to steal the cookie and hijack the session.
@@ -86,7 +86,7 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
 - **Remediation:** Ensure the application sets the HttpOnly and secure flags on all session cookies.
 
 ### 3.5 Information Disclosure: Server Version (Nmap)
-- **Severity:** Low/Informational
+- **Severity:** Informational
 - **Description:** Nmap revealed that port 80 is running `Apache httpd 2.4.25 (Debian)` and port 22 is running `openSSH`.Exposing exact software versions allows attackers to search for known CVEs (Common Vulnerabilities and Exposures) specific to those versions.
 - **Evidence:**
   ![evidence](./images/nmap.png)
@@ -98,7 +98,7 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
   ```
 
 ### 3.6 Infrastructure Exposure: SSH (Nmap)
-- **Severity:**: Medium
+- **Severity:** Medium
 - **Description:** Port 22 (SSH) is exposed on the network. If weak passwords or default configurations are used, this service is vulnerable to brute-force attacks.
 - **Remediation:**
     1. Disable password authentication and enforce SSH Keys.
@@ -110,6 +110,6 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
   3. **Long-term (Continuous):** Set up a Web Application Firewall (WAF) like ModSecurity, and conduct regular vulnerability scans.
 
 ## 5. Disclaimer
-This assessment was conducted in a controlled lab environment. No unauthorized testing was performed. This findings are based on automated scans and may not cover all potential vulnerabilities, especially those requiring authenticated access.
+This assessment was conducted in a controlled lab environment. No unauthorized testing was performed. These findings are based on automated scans and may not cover all potential vulnerabilities, especially those requiring authenticated access.
 
 End of Report

