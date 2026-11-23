@@ -22,9 +22,9 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
 | Severity | Count | Findings |
 | :--- | :--- | :--- |
 | **High** | 0 | - |
-| **Medium** | 3 | HTTP Only Site, Missing Anti-clickjacking, Directory Browsing |
-| **Low** | 1 | Cookie No HttpOnly Flag |
-| **Info** | 2 | Server Version Disclosure, SSH Exposure |
+| **Medium** | 4 | HTTP Only Site, Missing Anti-clickjacking, Directory Browsing, SSH Exposure |
+| **Low** | 1 | Cookie missing HttpOnly flag |
+| **Info** | 1 | Server Version Disclosure |
 
 ---
 
@@ -77,7 +77,7 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
   Options -Indexes
   ```
 
-### 3.4 Cookie No HttpsOnly Flag
+### 3.4 Session Cookie Missing HttpOnly Flag
 - **Severity:** Low
 - **OWASP Mapping:** A05:2021 - Security Misconfiguration
 - **Description:** The session cookie (`PHPSESSID`) is set without the `HttpOnly` flag. If a Cross-Site Scripting (XSS) vulnerability exists, an attacker could use Javascript to steal the cookie and hijack the session.
@@ -98,7 +98,7 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
   ```
 
 ### 3.6 Infrastructure Exposure: SSH (Nmap)
-- **Severity:**: Medium
+- **Severity:** Medium
 - **Description:** Port 22 (SSH) is exposed on the network. If weak passwords or default configurations are used, this service is vulnerable to brute-force attacks.
 - **Remediation:**
     1. Disable password authentication and enforce SSH Keys.
@@ -110,6 +110,6 @@ The scan revealed **4 main findings**: one infrastructure misconfiguration (expo
   3. **Long-term (Continuous):** Set up a Web Application Firewall (WAF) like ModSecurity, and conduct regular vulnerability scans.
 
 ## 5. Disclaimer
-This assessment was conducted in a controlled lab environment. No unauthorized testing was performed. This findings are based on automated scans and may not cover all potential vulnerabilities, especially those requiring authenticated access.
+This assessment was conducted in a controlled lab environment. No unauthorized testing was performed. These findings are based on automated scans and may not cover all potential vulnerabilities, especially those requiring authenticated access.
 
 End of Report
